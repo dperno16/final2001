@@ -42,7 +42,7 @@ public:
 
     // blue motor
     const int PWMA = 5;
-    const int AIN1 = 27;
+    const int AIN1 = 19;
     const int AIN2 = 23;
 
     void initRobot();

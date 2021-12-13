@@ -1,4 +1,6 @@
-/*Daniel Perno RBE2001 Final Project*/
+/*Daniel Perno RBE2001 Final Project
+A program to open gripper, drive forward, sense pickup station, raise blue motor, close gripper, turn 180, drive forward,
+detect intersection, turn right, lower blue motor, open gripper*/
 
 #include <Arduino.h>
 #include <IRdecoder.h>
@@ -16,6 +18,8 @@ void setup() {
 //main loop
 void loop(){
 
+  //robot.openGripper();
+  //delay(1000);
   //robot.wheelStop();
   //delay(2000);
 
@@ -25,8 +29,6 @@ void loop(){
   //robot.wheelStop();
   //delay(2000);
 
-  //robot.openGripper();
-  //delay(1000);
   robot.startDriving();
   //robot.uTurn();
   delay(1000);
@@ -37,10 +39,10 @@ void loop(){
   //robot.startDriving();
   //delay(2000);
 
-  robot.blueMotorStop();
-  delay(1000);
-  robot.wheelStop();
-  delay(2000);
+  //robot.blueMotorStop();
+  //delay(1000);
+  //robot.wheelStop();
+  //delay(2000);
   //robot.blueMotorDown();
   //delay(1000);
 
