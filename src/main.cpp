@@ -3,7 +3,6 @@ A program to open gripper, drive forward, sense pickup station, raise blue motor
 detect intersection, turn right, lower blue motor, open gripper*/
 
 #include <Arduino.h>
-#include <IRdecoder.h>
 #include <RBE1001Lib.h>
 #include "robot.h"
 
@@ -28,8 +27,6 @@ void loop(){
 
   //robot.wheelStop();
   //delay(2000);
-
-  robot.startDriving();
   //robot.uTurn();
   delay(1000);
   //robot.blueMotorUp();
@@ -38,6 +35,7 @@ void loop(){
   //delay(1000);
   //robot.startDriving();
   //delay(2000);
+  robot.driveFor();
 
   //robot.blueMotorStop();
   //delay(1000);

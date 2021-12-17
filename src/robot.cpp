@@ -1,3 +1,4 @@
+#include <RBE1001Lib.h>
 #include "robot.h"
 // a file to define functions initRobot for setup and those included in main loop to be included in main cpp file
 
@@ -21,6 +22,8 @@ void Robot::initRobot()
   pinMode(PWMA, OUTPUT);
   pinMode(AIN2, OUTPUT);
   pinMode(AIN1, OUTPUT);
+  //ir stuff
+  
 }
 
 // bring motors to 0
@@ -36,12 +39,15 @@ void Robot::startDriving()
   left_motor.setSpeed(60);
   right_motor.setSpeed(60);
 }
-
+void Robot::driveFor(){
+  left_motor.startMoveFor(163, 60);
+  right_motor.startMoveFor(163, 60);
+}
 // turn around
 void Robot::uTurn()
 {
-  left_motor.setSpeed(-10);
-  right_motor.setSpeed(10);
+  left_motor.setSpeed(-30);
+  right_motor.setSpeed(30);
   if (right_motor.getCurrentDegrees() - prevDegreesRight >= turn180)
   {
     wheelStop();

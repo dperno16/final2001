@@ -25,7 +25,7 @@ public:
     int prevDegreesLeft = 0;
     int prevDegreesRight = 0;
     int setUp = 1;
-
+    
     // motor stuff
     Motor left_motor;
     Motor right_motor;
@@ -45,6 +45,10 @@ public:
     const int AIN1 = 19;
     const int AIN2 = 23;
 
+    //ir stuff
+    const uint8_t IR_DETECTOR_PIN = 15;
+   
+    
     void initRobot();
     void wheelStop();
     void startDriving();
@@ -54,5 +58,7 @@ public:
     void blueMotorStop();
     void openGripper();
     void closeGripper();
+    void driveFor();
+    void startMoveFor();
     // void(turn)
 };
