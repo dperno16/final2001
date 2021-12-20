@@ -1,14 +1,17 @@
 /*Daniel Perno RBE2001 Final Project
+
 A program to open gripper, drive forward, sense pickup station, raise blue motor, close gripper, turn 180, drive forward,
 detect intersection, turn right, lower blue motor, open gripper*/
 
 #include <Arduino.h>
 #include <RBE1001Lib.h>
+#include <IRdecoder.h>
+#include <RemoteConstants.h>
 #include "robot.h"
 
 Robot robot;
 
-//start everything
+//start everything with initRobot from robot class
 void setup() {
   Serial.begin(115200);
   robot.initRobot();
@@ -16,26 +19,26 @@ void setup() {
 
 //main loop
 void loop(){
-
+  
   //robot.openGripper();
   //delay(1000);
   //robot.wheelStop();
   //delay(2000);
-
-  //robot.startDriving();
-  //delay(2000);
-
+  //robot.ultrasonicGetDistance();
+  robot.startDriving(); //locks wheels?
+  //delay(4000);
+  //robot.getKeyCode();
   //robot.wheelStop();
   //delay(2000);
   //robot.uTurn();
-  delay(1000);
+  //delay(1000);
   //robot.blueMotorUp();
   //delay(1000);
-  //robot.closeGripper();
+  //robot.closeGripper();     
   //delay(1000);
   //robot.startDriving();
   //delay(2000);
-  robot.driveFor();
+  //robot.driveFor();
 
   //robot.blueMotorStop();
   //delay(1000);
