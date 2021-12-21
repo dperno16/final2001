@@ -37,3 +37,13 @@ const uint8_t remote7 = 0x18;
 const uint8_t remote8 = 0x19;
 const uint8_t remote9 = 0x1A;
 
+//constant integers assigned to ir remote buttons from how the reciever reads the keypress 
+const int zero = 0;
+const int one = 1;
+const int two = 2;
+const int four = 4;
+const int five = 5;
+const int six = 6;
+const int eight = 8;
+const int nine = 9;
+const int ten = 10;

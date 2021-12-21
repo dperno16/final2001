@@ -1,24 +1,43 @@
 #include <Arduino.h>
 #include <RBE1001Lib.h>
 
-enum State
+enum ROBOT_STATE
 {
-    IDLE,
-    ACTIVE,
-    LINING,
-    TURNING,
-    SEARCHING
+    ROBOT_IDLE,
+    ROBOT_ACTIVE,
+    ROBOT_LINING,
+    ROBOT_TURNING,
+    ROBOT_SEARCHING,
+    ROBOT_FEASTING,
+    UTURN,
+    BACKUP,
+    RIGHTTURN
 };
-
+enum DESTINATION_STATE
+{
+    PICKUP,
+    MIDDLE,
+    DROPOFF
+};
 class Robot
 {
 public:
     Robot();
     //initial state for robot
-    //State robotState = IDLE;
+    ROBOT_STATE robotState = ROBOT_IDLE;
+    DESTINATION_STATE destinationState = PICKUP;
 
     //driving stuff
-    
+    bool returning = false;
+    float wheelCircumference = 7 * 3.14;
+    float wheelBaseCircumference = 14.7 * 3.14;
+    float revolutionsFor360 = wheelBaseCircumference / wheelCircumference;
+    float turn90 = revolutionsFor360 * 0.225 * 360;
+    float turn180 = revolutionsFor360 * .475 * 360;
+    int prevDegreesLeft = 0;
+    int prevDegreesRight = 0;
+    int setUp = 1;
+    bool backedUp = false;
 
     //ultrasonic stuff
     bool searching = false;
@@ -38,9 +57,9 @@ public:
     uint16_t raise = 90;
 
     // blue motor
-    //const int PWMA = 5;
-    //const int AIN1 = 19;
-    //const int AIN2 = 23;
+    const int PWMA = 5;
+    const int AIN1 = 21;
+    const int AIN2 = 23;
 
     //ir stuff
     //IRDecoder decoder;
@@ -73,5 +92,7 @@ public:
     void startMoveFor();
     float ultrasonicGetDistance();
     void getKeyCode();
-    // void(turn)
+
+    void mainStateMachine();
+    
 };

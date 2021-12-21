@@ -9,6 +9,7 @@ detect intersection, turn right, lower blue motor, open gripper*/
 #include <RemoteConstants.h>
 #include "robot.h"
 
+//instantiate the Robot class with the object robot
 Robot robot;
 
 //start everything with initRobot from robot class
@@ -19,13 +20,13 @@ void setup() {
 
 //main loop
 void loop(){
-  
+  robot.mainStateMachine();
   //robot.openGripper();
   //delay(1000);
   //robot.wheelStop();
   //delay(2000);
   //robot.ultrasonicGetDistance();
-  robot.startDriving(); //locks wheels?
+  //robot.startDriving();
   //delay(4000);
   //robot.getKeyCode();
   //robot.wheelStop();
