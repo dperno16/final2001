@@ -1,1 +1,1 @@
-A program built to fulfill thhe requirements for RBE2001 Final Project
+A program written to complete the outlined challenge for the WPI RBE2001 final project, a robotic solar panel delivery system, including switch-case state machine programming for a multi-file program, an improvement on the else-if state machine shown in the IR-TEST repository.
